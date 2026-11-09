@@ -1,0 +1,20 @@
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 16px;
+    text-align: center;
+}
+
+@media (max-width: 720px) {
+    .banner h1 {
+        font-size: 36px;
+    }
+}
+@media (max-width: 540px) {
+    .banner h1 {
+        font-size: 30px;
+    }
+    .banner h2 {
+        font-size: 20px;
+    }
+}

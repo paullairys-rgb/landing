@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:wght@100..900&display=swap");
+
+@import url("components/avatar.css");
+@import url("components/banner.css");
+@import url("components/button.css");
+@import url("components/container.css");
+@import url("components/card.css");
+
+:root {
+  --fond: #f7f2e9;
+  --fond-clair: #fcf9f3;
+  --sable: #e8dfcf;
+  --nuit: #14213d;
+  --nuit-clair: #22345c;
+  --or: #c9a24b;
+  --or-clair: #e6c77e;
+  --accent: #c9a24b;
+  --accent-fonce: #a88332;
+  --titre: #14213d;
+  --texte: #3d4459;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  margin: 0px;
+  color: var(--texte);
+  background-color: var(--fond);
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-title {
+  color: var(--titre);
+  text-align: center;
+  font-size: 32px;
+  margin: 80px 20px 10px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  margin: 16px auto 0;
+  background: linear-gradient(90deg, transparent, var(--or), transparent);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-style: italic;
+  margin: 0 20px 30px;
+}
+
+#apply-section {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+.signup-form {
+  background-color: var(--fond-clair);
+  border: 1px solid var(--sable);
+  border-top: 3px solid var(--nuit);
+  border-radius: 12px;
+  box-shadow: 0px 14px 40px rgba(20, 33, 61, 0.10);
+  padding: 32px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row .form-field {
+  flex: 1;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--titre);
+  margin-bottom: 6px;
+}
+
+.form-field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  color: var(--titre);
+  background-color: var(--fond);
+  border: 1px solid var(--sable);
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input::placeholder {
+  color: #a89a88;
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(201, 162, 75, 0.25);
+}
+
+.signup-form button {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.signup-form button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.hp {
+  display: none;
+}
+
+.form-message {
+  text-align: center;
+  margin: 16px 0 0;
+  min-height: 1.4em;
+  font-size: 16px;
+}
+
+.form-message.success { color: #5b7a4a; }
+.form-message.error { color: #a5513f; }
+
+@media (max-width: 540px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .signup-form {
+    padding: 24px 20px;
+  }
+  .section-title {
+    font-size: 26px;
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 50px 20px 60px;
+  margin-top: 60px;
+  background-color: var(--nuit);
+}
+
+.footer-tagline {
+  color: var(--fond);
+  opacity: 0.7;
+  font-style: italic;
+  margin: 0 0 18px;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--or);
+  font-family: 'Roboto', sans-serif;
+  padding: 12px 22px;
+  border: 1px solid rgba(201, 162, 75, 0.5);
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.footer-link:hover {
+  background-color: var(--or);
+  color: var(--nuit);
+}
+
+.insta-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal, .hero-anim, .word {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
